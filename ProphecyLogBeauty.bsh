@@ -1,0 +1,41 @@
+// $RCSfile: ProphecyLogBeauty.bsh,v $
+
+// $Author: kschmitte $
+// $Date: 2010/07/26 07:55:52 $
+// $Revision: 1.2 $
+
+// opyright (C) 2002-2010 Voxeo Germany GmbH. All Rights Reserved. Confidential
+
+// Makro for jEdit from Kai Schmitte
+// replaces entities of control characters with their respective control characters 
+// to make Prophecy log files readable. 
+// 04/2010
+
+SearchAndReplace.setSearchString("\\\\r\\\\n");
+SearchAndReplace.setReplaceString("\\n");
+SearchAndReplace.setBeanShellReplace(false);
+SearchAndReplace.setIgnoreCase(false);
+SearchAndReplace.setRegexp(true);
+SearchAndReplace.setSearchFileSet(new CurrentBufferSet());
+SearchAndReplace.replaceAll(view);
+SearchAndReplace.setSearchString("\\\\n");
+SearchAndReplace.setReplaceString("\\n");
+SearchAndReplace.setBeanShellReplace(false);
+SearchAndReplace.setIgnoreCase(false);
+SearchAndReplace.setRegexp(true);
+SearchAndReplace.setSearchFileSet(new CurrentBufferSet());
+SearchAndReplace.replaceAll(view);
+SearchAndReplace.setSearchString("\\\\s");
+SearchAndReplace.setReplaceString("/");
+SearchAndReplace.setBeanShellReplace(false);
+SearchAndReplace.setIgnoreCase(false);
+SearchAndReplace.setRegexp(true);
+SearchAndReplace.setSearchFileSet(new CurrentBufferSet());
+SearchAndReplace.replaceAll(view);
+SearchAndReplace.setSearchString("\\\\t");
+SearchAndReplace.setReplaceString("\\t");
+SearchAndReplace.setBeanShellReplace(false);
+SearchAndReplace.setIgnoreCase(false);
+SearchAndReplace.setRegexp(true);
+SearchAndReplace.setSearchFileSet(new CurrentBufferSet());
+SearchAndReplace.replaceAll(view);
